@@ -100,4 +100,4 @@ $mysqli = new mysqli('localhost', 'root', null, 'no_localizados', 33069);
 </div>
 
 <input type="submit" class="btn btn-success" value="{{$Modo=='crear' ? 'Agregar':'Modificar'}}">
-<a class="btn btn-primary" href="{{ url ('datosdesaparecidos') }}">Regresar</a>
+<a class="btn btn-primary" href="{{ url ('datosdesaparecido') }}">Regresar</a>

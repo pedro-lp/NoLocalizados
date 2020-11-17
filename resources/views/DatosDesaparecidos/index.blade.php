@@ -8,7 +8,7 @@
 </div>
 
 @endif
-<a href="{{ url ('datosdesaparecidos/create') }}" class="btn btn-success">Agregar No Localizado</a><br><br>
+<a href="{{ url ('datosdesaparecido/create') }}" class="btn btn-success">Agregar No Localizado</a><br><br>
 <table class="table table-hover">
     <thead class="thead-dark">
         <tr>
@@ -30,7 +30,7 @@
     </thead>
 
     <tbody>
-        @foreach($DatosDesaparecidos as $DatDes)
+        @foreach($DatosDesaparecido as $DatDes)
         <tr>
             <th scope="row">{{$loop->iteration}}</th>
             <td>{{$DatDes->nombre}}</td>
@@ -45,8 +45,8 @@
             <td>{{$DatDes->fechaNacimiento}}</td>
             <td>{{$DatDes->edad}}</td>
             <td>{{$DatDes->escolaridad}}</td>
-            <td><a class="btn btn-warning" href="{{ url('/datosdesaparecidos/'.$DatDes->id.'/edit') }}" >Editar</a>
-                <form method="post" action="{{ url('/datosdesaparecidos/'.$DatDes->id) }}" style="display: block">
+            <td><a class="btn btn-warning" href="{{ url('/datosdesaparecido/'.$DatDes->id.'/edit') }}" >Editar</a>
+                <form method="post" action="{{ url('/datosdesaparecido/'.$DatDes->id) }}" style="display: block">
                 {{csrf_field() }}
                 {{method_field('DELETE') }}
                 <button class="btn btn-danger" type="submit" onclick="return confirm ('¿Desea borrar este registro?');">Borrar</button>
@@ -56,6 +56,6 @@
         @endforeach
     </tbody>
 </table>
-{{ $DatosDesaparecidos ->links() }}
+{{ $DatosDesaparecido ->links() }}
 </div>
 @endsection

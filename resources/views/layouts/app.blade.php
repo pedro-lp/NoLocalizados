@@ -26,10 +26,10 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #e3f2fd;">
             <!--class="navbar navbar-light" style="background-color: #e3f2fd;"-->
             <div class="container">
-                <img src="http://fiscaliaguerrero.gob.mx/wp-content/uploads/2018/07/LOG.png" width="90" height="90">
+                <img src="http://fiscaliaguerrero.gob.mx/wp-content/uploads/2018/07/LOG.png" width="80" height="80">
                 <div style="display: inline-block;">
-                    <h3 style="color: #014799; font-weight: 1000;">FISCALÍA GENERAL</h3>
-                    <h4 style="color: #014799; font-weight: bold;">DEL ESTADO DE GUERRERO</h4>
+                    <a href="{{ url('/') }}" style="color: #014799; font-weight: 1000; font-size: 20px;">{{ __(' FISCALÍA GENERAL ') }}</a><br>
+                    <a href="{{ url('/') }}" style="color: #014799; font-weight: bold; font-size: 20px;">{{ __(' DEL ESTADO DE GUERRERO ') }}</a>
                 </div>
                 <!--<a class="navbar-brand" href="{{ url('/') }}">{{ __(' No Localizados ') }}</a>-->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -79,25 +79,25 @@
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url ('datosregistros') }}">{{ __('Datos Registro') }}</a>
+                    <a class="nav-link" href="{{ url ('datosregistro') }}">{{ __('Datos Registro') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url ('datosdesaparecidos') }}">{{ __('Datos Generales') }}</a>
+                    <a class="nav-link" href="{{ url ('datosdesaparecido') }}">{{ __('Datos Generales') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url ('datosreportantes') }}">{{ __('Datos Reportante') }}</a>
+                    <a class="nav-link" href="{{ url ('datosreportante') }}">{{ __('Datos Reportante') }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">{{ __('Domicilio') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#">{{ __('Fotografias') }}</a>
+                    <a class="nav-link " href="{{ url ('foto') }}">{{ __('Fotografia') }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">{{ __('Media Filiación') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">{{ __('Salir') }}</a>
+                    <a class="nav-link disabled" href="#">{{ __('Info') }}</a>
                 </li>
             </ul>
         </div>

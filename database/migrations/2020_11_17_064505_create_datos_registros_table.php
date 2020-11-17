@@ -20,7 +20,7 @@ class CreateDatosRegistrosTable extends Migration
             $table->integer('idEstatus');
             $table->integer('idDelito');
             $table->integer('idMedioConocimiento');
-            $table->integer('idAtravezDe');
+            $table->integer('idAtravesDe');
             //$table->unsignedBigInteger('fkidDatosDelPersonal');
             //$table->foreign('fkidDatosDelPersonal')->references('idDatosDelPersonal')->on('datos_personals');
             $table->dateTime('fechaActualizacion');

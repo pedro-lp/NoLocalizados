@@ -8,7 +8,7 @@
 </div>
 
 @endif
-<a href="{{ url ('datosdesaparecidos/create') }}" class="btn btn-success">Agregar reportante</a><br><br>
+<a href="{{ url ('datosreportante/create') }}" class="btn btn-success">Agregar reportante</a><br><br>
 <table class="table table-hover">
     <thead class="thead-dark">
         <tr>
@@ -21,16 +21,20 @@
             <th scope="col">CURP</th>
             <th scope="col">RFC</th>
             <th scope="col">Estado Civil</th>
-            <th scope="col">Estado de nacimiento</th>
-            <th scope="col">Fecha de nacimiento</th>
+            <th scope="col">Estado de Nacimiento</th>
+            <th scope="col">Fecha de Nacimiento</th>
             <th scope="col">Edad</th>
             <th scope="col">Escolaridad</th>
+            <th scope="col">Relacion</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Telefono Movil</th>
+            <th scope="col">Telefono Fijo</th>
             <th scope="col">Acciones</th>
         </tr>
     </thead>
 
     <tbody>
-        @foreach($DatosDesaparecidos as $DatDes)
+        @foreach($DatosReportante as $DatDes)
         <tr>
             <th scope="row">{{$loop->iteration}}</th>
             <td>{{$DatDes->nombre}}</td>
@@ -45,8 +49,14 @@
             <td>{{$DatDes->fechaNacimiento}}</td>
             <td>{{$DatDes->edad}}</td>
             <td>{{$DatDes->escolaridad}}</td>
-            <td><a class="btn btn-warning" href="{{ url('/datosdesaparecidos/'.$DatDes->id.'/edit') }}" >Editar</a>
-                <form method="post" action="{{ url('/datosdesaparecidos/'.$DatDes->id) }}" style="display: block">
+
+            <td>{{$DatDes->relacion}}</td>
+            <td>{{$DatDes->correo}}</td>
+            <td>{{$DatDes->telMovil}}</td>
+            <td>{{$DatDes->telFijo}}</td>
+
+            <td><a class="btn btn-warning" href="{{ url('/datosreportante/'.$DatDes->id.'/edit') }}" >Editar</a>
+                <form method="post" action="{{ url('/datosreportante/'.$DatDes->id) }}" style="display: block">
                 {{csrf_field() }}
                 {{method_field('DELETE') }}
                 <button class="btn btn-danger" type="submit" onclick="return confirm ('¿Desea borrar este registro?');">Borrar</button>
@@ -56,6 +66,6 @@
         @endforeach
     </tbody>
 </table>
-{{ $DatosDesaparecidos ->links() }}
+{{ $DatosReportante ->links() }}
 </div>
 @endsection

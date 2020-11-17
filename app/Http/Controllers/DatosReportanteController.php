@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\DatosDesaparecido;
+use App\DatosReportante;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
-class DatosDesaparecidoController extends Controller
+class DatosReportanteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class DatosDesaparecidoController extends Controller
     public function index()
     {
         //
-        $datos['DatosDesaparecidos']=DatosDesaparecido::paginate(10);
-        return view('DatosDesaparecidos.index',$datos);
+        $datos['DatosReportante']=DatosReportante::paginate(10);
+        return view('DatosReportante.index',$datos);
     }
 
     /**
@@ -28,7 +28,7 @@ class DatosDesaparecidoController extends Controller
     public function create()
     {
         //
-        return view('DatosDesaparecidos.create');
+        return view('DatosReportante.create');
     }
 
     /**
@@ -57,11 +57,11 @@ class DatosDesaparecidoController extends Controller
         $this->validate($request,$campos,$Mensaje);
         $fecha = Carbon::now();
         //
-        $datosDesaparecido=request()->except('_token');
-        $datosDesaparecido['fechaActualizacion']=$fecha;
-        DatosDesaparecido::insert($datosDesaparecido);
+        $DatosReportante=request()->except('_token');
+        $DatosReportante['fechaActualizacion']=$fecha;
+        DatosReportante::insert($DatosReportante);
         //return response()->json($datosDesaparecido);
-        return redirect('datosdesaparecidos')->with('Mensaje','Datos de No Localizado Agregados con Exito');
+        return redirect('DatosReportante')->with('Mensaje','Datos de No Localizado Agregados con Exito');
     }
 
     /**
@@ -70,7 +70,7 @@ class DatosDesaparecidoController extends Controller
      * @param  \App\DatosDesaparecido  $datosDesaparecido
      * @return \Illuminate\Http\Response
      */
-    public function show(DatosDesaparecido $datosDesaparecido)
+    public function show(DatosReportante $DatosReportante)
     {
         //
     }
@@ -84,8 +84,8 @@ class DatosDesaparecidoController extends Controller
     public function edit($id)
     {
         //
-        $datosDesaparecido = DatosDesaparecido::findOrFail($id);
-        return view('DatosDesaparecidos.edit',compact('datosDesaparecido'));
+        $DatosReportante = DatosReportante::findOrFail($id);
+        return view('DatosReportante.edit',compact('DatosReportante'));
     }
 
     /**
@@ -116,12 +116,12 @@ class DatosDesaparecidoController extends Controller
         //
         $fecha = Carbon::now();
         //
-        $datosDesaparecido=request()->except('_token','_method');
-        $datosDesaparecido['fechaActualizacion']=$fecha;
-        DatosDesaparecido::where('id','=',$id)->update($datosDesaparecido);
+        $DatosReportante=request()->except('_token','_method');
+        $DatosReportante['fechaActualizacion']=$fecha;
+        DatosReportante::where('id','=',$id)->update($DatosReportante);
         //$datosDesaparecido = DatosDesaparecido::findOrFail($id);
         //return view('DatosDesaparecidos.edit',compact('datosDesaparecido'));
-        return redirect('datosdesaparecidos')->with('Mensaje','Datos de No Localizado Modificados con Exito');
+        return redirect('DatosReportante')->with('Mensaje','Datos de No Localizado Modificados con Exito');
     }
 
     /**
@@ -133,8 +133,8 @@ class DatosDesaparecidoController extends Controller
     public function destroy($id)
     {
         //
-        DatosDesaparecido::destroy($id);
+        DatosReportante::destroy($id);
         //return redirect('datosdesaparecidos');
-        return redirect('datosdesaparecidos')->with('Mensaje','Datos de No Localizado Eliminados con Exito');
+        return redirect('DatosReportante')->with('Mensaje','Datos de No Localizado Eliminados con Exito');
     }
 }

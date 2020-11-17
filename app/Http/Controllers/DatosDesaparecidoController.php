@@ -16,7 +16,7 @@ class DatosDesaparecidoController extends Controller
     public function index()
     {
         //
-        $datos['DatosDesaparecidos']=DatosDesaparecido::paginate(10);
+        $datos['DatosDesaparecido']=DatosDesaparecido::paginate(10);
         return view('DatosDesaparecidos.index',$datos);
     }
 
@@ -61,7 +61,7 @@ class DatosDesaparecidoController extends Controller
         $datosDesaparecido['fechaActualizacion']=$fecha;
         DatosDesaparecido::insert($datosDesaparecido);
         //return response()->json($datosDesaparecido);
-        return redirect('datosdesaparecidos')->with('Mensaje','Datos de No Localizado Agregados con Exito');
+        return redirect('datosdesaparecido')->with('Mensaje','Datos de No Localizado Agregados con Exito');
     }
 
     /**
@@ -121,7 +121,7 @@ class DatosDesaparecidoController extends Controller
         DatosDesaparecido::where('id','=',$id)->update($datosDesaparecido);
         //$datosDesaparecido = DatosDesaparecido::findOrFail($id);
         //return view('DatosDesaparecidos.edit',compact('datosDesaparecido'));
-        return redirect('datosdesaparecidos')->with('Mensaje','Datos de No Localizado Modificados con Exito');
+        return redirect('datosdesaparecido')->with('Mensaje','Datos de No Localizado Modificados con Exito');
     }
 
     /**
@@ -135,6 +135,6 @@ class DatosDesaparecidoController extends Controller
         //
         DatosDesaparecido::destroy($id);
         //return redirect('datosdesaparecidos');
-        return redirect('datosdesaparecidos')->with('Mensaje','Datos de No Localizado Eliminados con Exito');
+        return redirect('datosdesaparecido')->with('Mensaje','Datos de No Localizado Eliminados con Exito');
     }
 }

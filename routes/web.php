@@ -19,12 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('datosdesaparecidos','DatosDesaparecidoController');
-Route::resource('datosreportantes','DatosDesaparecidoController');
-Route::resource('datosregistros','DatosRegistroController');
+Route::resource('datosdesaparecido','DatosDesaparecidoController');
+Route::resource('datosreportante','DatosReportanteController');
+Route::resource('datosregistro','DatosRegistroController');
+Route::resource('foto','DatosRegistroController');
 
-Route::view('/datosdesaparecido','datosdesaparecido1')->name('datosdesaparecido');
-
-Route::view('/datosRegistro','datosRegistro')->name('datosRegistro');
-
-Route::view('/datosFotografia','datosFotografia')->name('datosFotografia');
+Route::view('/datosdesaparecido2','datosdesaparecido1')->name('datosdesaparecido');
+Route::view('/datosRegistro2','datosRegistro')->name('datosRegistro');
+Route::view('/datosFotografia2','datosFotografia')->name('datosFotografia');

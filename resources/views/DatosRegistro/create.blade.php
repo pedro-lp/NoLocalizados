@@ -13,10 +13,10 @@
 </div>
 @endif
 
-    <form action="{{url('/datosdesaparecido')}}" class="form-horizontal" method="post">
+    <form action="{{url('/DatosRegistro')}}" class="form-horizontal" method="post">
     <!--enctype="multipart/form-data" para ingresar una imagen-->
     {{csrf_field() }}
-    @include('datosdesaparecidos.form',['Modo'=>'crear'])
+    @include('DatosRegistro.form',['Modo'=>'crear'])
    
 </form>
 </div>
