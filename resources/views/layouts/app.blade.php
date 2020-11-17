@@ -79,13 +79,13 @@
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{ __('Datos Registro') }}</a>
+                    <a class="nav-link" href="{{ url ('datosregistros') }}">{{ __('Datos Registro') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url ('datosdesaparecidos/create') }}">{{ __('Datos Generales') }}</a>
+                    <a class="nav-link" href="{{ url ('datosdesaparecidos') }}">{{ __('Datos Generales') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{ __('Datos Reportante') }}</a>
+                    <a class="nav-link" href="{{ url ('datosreportantes') }}">{{ __('Datos Reportante') }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">{{ __('Domicilio') }}</a>

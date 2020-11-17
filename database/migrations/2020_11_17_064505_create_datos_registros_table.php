@@ -14,8 +14,16 @@ class CreateDatosRegistrosTable extends Migration
     public function up()
     {
         Schema::create('datos_registros', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->increments('idDatosRegistro');
+            $table->string('expedinte',150);
+            $table->dateTime('fechaInicio');
+            $table->integer('idEstatus');
+            $table->integer('idDelito');
+            $table->integer('idMedioConocimiento');
+            $table->integer('idAtravezDe');
+            //$table->unsignedBigInteger('fkidDatosDelPersonal');
+            //$table->foreign('fkidDatosDelPersonal')->references('idDatosDelPersonal')->on('datos_personals');
+            $table->dateTime('fechaActualizacion');
         });
     }
 

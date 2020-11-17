@@ -15,7 +15,24 @@ class CreateDatosReportantesTable extends Migration
     {
         Schema::create('datos_reportantes', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('nombre');
+            $table->string('apellidoPat');
+            $table->string('apellidoMat');
+            $table->integer('sexo');
+            $table->integer('nacionalidad');
+            $table->string('curp');
+            $table->string('rfc');
+            $table->integer('edoCivil');
+            $table->integer('edoNacimiento');
+            $table->date('fechaNacimiento');
+            $table->integer('edad');
+            $table->integer('escolaridad');
+            $table->integer('relacion');
+            $table->string('correo');
+            $table->string('telMovil');
+            $table->string('telFijo');
+
+            $table->dateTime('fechaActualizacion');
         });
     }
 
