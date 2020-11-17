@@ -2,6 +2,10 @@
 // Verificamos la conexión con el servidor y la base de datos
 $mysqli = new mysqli('localhost', 'root', null, 'no_localizados', 33069);
 ?>
+<h3>
+    <font color="black"><strong> Datos Generales de la persona Desaparecida o No Localizada</strong></font>
+</h3>
+
 <div class="form-group">
     <label for="nombre" class="control-label">{{'Nombre'}}</label>
     <input type="text" class="form-control {{$errors->has('nombre')?'is-invalid':'' }} " name="nombre" id="nombre" value="{{ isset($datosDesaparecido->nombre) ? $datosDesaparecido->nombre:old('nombre') }}">

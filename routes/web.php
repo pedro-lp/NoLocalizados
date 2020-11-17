@@ -20,3 +20,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('datosdesaparecidos','DatosDesaparecidoController');
+
+Route::view('/datosdesaparecido','datosdesaparecido1')->name('datosdesaparecido');
+
+Route::view('/datosRegistro','datosRegistro')->name('datosRegistro');
+
+Route::view('/datosFotografia','datosFotografia')->name('datosFotografia');

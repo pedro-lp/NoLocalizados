@@ -17,7 +17,7 @@ class CreateDatosPersonalsTable extends Migration
             $table->increments('idDatosPersonal');
             $table->string('nombre',45);
             $table->string('primerApellido',45);
-            $table->string('segundoAPellido',45);
+            $table->string('segundoApellido',45);
             $table->string('cargo',45);
             $table->string('dependencia',45);
             $table->string('unidadAdministrativa',45);
